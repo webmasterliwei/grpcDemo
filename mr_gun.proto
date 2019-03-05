@@ -1,0 +1,23 @@
+syntax = "proto3";
+
+package mr_gun;
+
+service MrGun {
+    rpc GetRank (Request) returns (Reply);
+}
+
+message Request {
+    string sort = 1;
+}
+
+message GunInfo {
+    string name = 1;
+    string damage = 2;
+    string bulletsShot = 3;
+    string totalDamage = 4;
+    string scatter = 5;
+}
+
+message Reply {
+    repeated GunInfo gunInfo = 1;
+}
